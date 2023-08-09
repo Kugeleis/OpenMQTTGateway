@@ -82,6 +82,17 @@
 #  endif
 #endif
 
+// WiFi configuration --- UPDATE this configuration for your WiFi AP
+char ssid[] = "ssid";
+char password[] = "password";
+
+// WireGuard configuration --- UPDATE this configuration from JSON
+char private_key[] = "(Private Key)"; // [Interface] PrivateKey
+IPAddress local_ip(1, 2, 3, 4); // [Interface] Address
+char public_key[] = "(Public Key)"; // [Peer] PublicKey
+char endpoint_address[] = "link.arc.soracom.io"; // [Peer] Endpoint
+int endpoint_port = 11010; // [Peer] Endpoint
+
 #if defined(ESP8266) || defined(ESP32) // for nodemcu, weemos and esp8266
 //#  define ESPWifiManualSetup true //uncomment you don't want to use wifimanager for your credential settings on ESP
 #else // for arduino boards

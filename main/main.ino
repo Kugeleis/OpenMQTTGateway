@@ -25,7 +25,10 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+#include <WireGuard-ESP32.h>
+
 #include "User_config.h"
+static WireGuard wg;
 
 // States of the gateway
 // Wm setup
@@ -1000,6 +1003,16 @@ void setup() {
   eClient = new EthernetClient;
 #endif
   client.setClient(*(Client*)eClient);
+
+  delay(1500);
+
+  Serial.println("Connected. Initializing WireGuard...");
+  wg.begin(
+      local_ip,
+      private_key,
+      endpoint_address,
+      public_key,
+      endpoint_port);
 
 #if defined(MDNS_SD) && (defined(ESP8266) || defined(ESP32))
   Log.trace(F("Connecting to MQTT by mDNS without MQTT hostname" CR));
