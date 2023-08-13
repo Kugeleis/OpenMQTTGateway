@@ -5,3 +5,4 @@
 node_modules
 *.ps1
 main/certs/private*
+main/my_config.h
