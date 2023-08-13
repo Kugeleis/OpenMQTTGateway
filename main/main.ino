@@ -25,10 +25,8 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-#include <WireGuard-ESP32.h>
 
 #include "User_config.h"
-static WireGuard wg;
 
 // States of the gateway
 // Wm setup
